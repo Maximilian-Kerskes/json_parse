@@ -1,0 +1,6 @@
+# .clang-format
+IndentWidth: 4
+TabWidth: 4
+UseTab: Never # use spaces; change to Always if you want real tab characters
+BreakBeforeBraces: Attach
+ColumnLimit: 80    # keep long lines (set e.g. 100 if you want wrapping)

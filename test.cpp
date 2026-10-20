@@ -1,23 +1,12 @@
 #include "include/json.hpp"
 #include <iostream>
 
-int main(){
+int main() {
     // writing test
     Json json;
-
-    json["person"] = Json::Object({
-        {"name", "John Doe"},
-        {"age", 3.124},
-        {"hobbies", Json::Array({
-            {"running"},
-            {"singing"},
-            {"dancing"}
-        })},
-        {"address", Json::Object({
-            {"street", "123 Main St"},
-            {"city", "Somewhere"},
-            {"zipcode", 12345},
-        })}});    
+	json = Json::Object({{"person", Json::Object({
+        {"hello", Json::Array({"How", "Are", "You"})},
+	})}});
 
     // parsing test
     // JsonParse jsonParse;
@@ -34,10 +23,10 @@ int main(){
     // for(const auto& [key, value] : obj){
     //     std::cout << key << " : " << *value << '\n';
     // }
-    
-    json["person"] += {{"hello", Json::Array({"How", "Are", "You"})}};
+
+    // json["person"] += {{"hello", Json::Array({"How", "Are", "You"})}};
     json.write("testFile.json");
     std::cout << json << std::endl;
 
     return 0;
-    }
+}
